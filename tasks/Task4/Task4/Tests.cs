@@ -1,13 +1,55 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
+using Task4;
 
 namespace Task4
 {
-    class Tests
+    [TestFixture]
+    public class Tests
     {
+        [Test]
+        public void IsAmountGreaterThanZeroHam()
+        {
+            Assert.Catch(() =>
+            {
+                Hamburger x = new Hamburger(-1);
+            });
+        }
+
+        [Test]
+        public void IsAmountGreaterThanZeroCheese()
+        {
+            Assert.Catch(() =>
+            {
+                Cheeseburger x = new Cheeseburger(-1);
+            });
+        }
+
+        [Test]
+        public void NegativeAmountHam()
+        {
+            Assert.Catch(() =>
+            {
+                Hamburger x = new Hamburger(-1);
+            });
+        }
+
+        [Test]
+        public void NegativeAmountCheese()
+        {
+            Assert.Catch(() =>
+            {
+                Cheeseburger x = new Cheeseburger(-1);
+            });
+        }
+
+        //[Test]
+        //public void ConfigIsYesOrNoHam()
+        //{
+        //    Hamburger x = new Hamburger(3);
+        //    x.ConfigBurger();
+
+        //    Assert.IsTrue(x.ConfigBurger)
+        //}
     }
 }

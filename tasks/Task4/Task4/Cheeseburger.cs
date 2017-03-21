@@ -70,11 +70,19 @@ namespace Task4
                 {
                     standardPrice = standardPrice + 0.2;
                 }
+                else
+                {
+                    Console.WriteLine("No salad.");
+                }
 
                 Console.Write("\nOnions? (Enter) ");
                 if (Console.ReadKey().Key == ConsoleKey.Enter)
                 {
                     standardPrice = standardPrice + 0.2;
+                }
+                else
+                {
+                    Console.WriteLine("No onions.");
                 }
 
                 Console.Write("\nTomatos? (Enter) ");
@@ -82,12 +90,21 @@ namespace Task4
                 {
                     standardPrice = standardPrice + 0.2;
                 }
+                else
+                {
+                    Console.WriteLine("No tomatos.");
+                }
 
                 Console.Write("\nChilis? (Enter) ");
                 if (Console.ReadKey().Key == ConsoleKey.Enter)
                 {
                     standardPrice = standardPrice + 0.2;
                 }
+                else
+                {
+                    Console.WriteLine("No chillis.");
+                }
+
                 Console.WriteLine($"\nNew price: {standardPrice * (double)userAmount} euros");
             }
         }
