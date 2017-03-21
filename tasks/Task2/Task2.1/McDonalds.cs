@@ -43,6 +43,10 @@ namespace Task2._1
                         TakeOrder(priceOfBurger, priceOfPommes, priceOfDrink, cashOrCard);
                     }
                 }
+                else
+                {
+                    TakeOrder(priceOfBurger, priceOfPommes, priceOfDrink, cashOrCard);
+                }
             }
         }
 
