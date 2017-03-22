@@ -8,14 +8,16 @@ namespace Task4
 {
     class Hamburger : Burger
     {
-        public double Price => 1.0;
-        public int amount = 0;
+        public double price => 1.0;
+        public int amount => Amount;
+        public int addedIngridientsInt => 0;
+        public string[] addedIngridientsStr => null;
 
         public Hamburger(int amount)
         {
             Amount = amount;
 
-            Console.WriteLine($"Your amount: {amount}");
+            Console.WriteLine($"Your amount: {Amount}");
         }
 
         public int Amount
@@ -39,14 +41,15 @@ namespace Task4
 
         public void PrintPrice()
         {
-            Console.WriteLine($"Price of hamburger: {Price} euros");
+            Console.WriteLine($"Price of hamburger: {price} euros");
         }
 
         public void ConfigBurger()
         {
             string userInput;
             int userAmount = amount;
-            double standardPrice = Price;
+            double standardPrice = price;
+            int i = 0;
 
             Console.WriteLine("Your hamburger contains a patty, pickels and ketchup.");
             Console.Write("Do you want to add something? Yes/No ");
@@ -69,6 +72,10 @@ namespace Task4
                 if (Console.ReadKey().Key == ConsoleKey.Enter)
                 {
                     standardPrice = standardPrice + 0.2;
+                    addedIngridientsStr[i] = "Salad";
+                    addedIngridientsInt++;
+                    i++;
+
                 }
                 else
                 {
@@ -79,6 +86,9 @@ namespace Task4
                 if (Console.ReadKey().Key == ConsoleKey.Enter)
                 {
                     standardPrice = standardPrice + 0.2;
+                    addedIngridientsStr[i] = "Onions";
+                    addedIngridientsInt++;
+                    i++;
                 }
                 else
                 {
@@ -89,6 +99,9 @@ namespace Task4
                 if (Console.ReadKey().Key == ConsoleKey.Enter)
                 {
                     standardPrice = standardPrice + 0.2;
+                    addedIngridientsStr[i] = "Tomatos";
+                    addedIngridientsInt++;
+                    i++;
                 }
                 else
                 {
@@ -99,6 +112,9 @@ namespace Task4
                 if (Console.ReadKey().Key == ConsoleKey.Enter)
                 {
                     standardPrice = standardPrice + 0.2;
+                    addedIngridientsStr[i] = "Chilis";
+                    addedIngridientsInt++;
+                    i++;
                 }
                 else
                 {
@@ -106,6 +122,36 @@ namespace Task4
                 }
 
                 Console.WriteLine($"\nNew price: {standardPrice * (double)userAmount} euros");
+            }
+        }
+
+        public void PrintAmount()
+        {
+            if (addedIngridientsInt != 0)
+            {
+                Console.WriteLine($"You added {addedIngridientsInt} ingridients.");
+            }
+            else
+            {
+                Console.WriteLine("No ingridients have been added.");
+            }
+        }
+
+        public void PrintIngridients()
+        {
+            if (addedIngridientsStr != null)
+            {
+                int i = 0;
+
+                Console.Write("You added: ");
+                for (i = addedIngridientsStr.Length; i < addedIngridientsStr.Length; i++)
+                {
+                    Console.Write($"{addedIngridientsStr[i]}, ");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No ingridients have been added.");
             }
         }
     }

@@ -56,6 +56,7 @@
     <Compile Include="Hamburger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialize.cs" />
     <Compile Include="Tests.cs" />
   </ItemGroup>
   <ItemGroup>

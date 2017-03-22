@@ -8,9 +8,14 @@ namespace Task4
 {
     interface Burger
     {
-        double Price { get; }
+        double price { get; }
+        int amount { get; set; }
+        int addedIngridientsInt { get; }
+        string[] addedIngridientsStr { get; }
 
         void PrintPrice();
+        void PrintAmount();
+        void PrintIngridients();
         void ConfigBurger();
     }
 }

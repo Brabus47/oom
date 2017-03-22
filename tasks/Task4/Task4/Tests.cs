@@ -42,14 +42,6 @@ namespace Task4
                 Cheeseburger x = new Cheeseburger(-1);
             });
         }
-
-        //[Test]
-        //public void ConfigIsYesOrNoHam()
-        //{
-        //    Hamburger x = new Hamburger(3);
-        //    x.ConfigBurger();
-
-        //    Assert.IsTrue(x.ConfigBurger)
-        //}
+        
     }
 }
