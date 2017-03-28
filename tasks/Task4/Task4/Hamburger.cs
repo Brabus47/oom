@@ -9,35 +9,36 @@ namespace Task4
     class Hamburger : Burger
     {
         public double price => 1.0;
-        public int amount => Amount;
-        public int addedIngridientsInt => 0;
         public string[] addedIngridientsStr => null;
+        private int userAmount = 0;
 
         public Hamburger(int amount)
         {
-            Amount = amount;
+            userAmount = amount;
 
-            Console.WriteLine($"Your amount: {Amount}");
+            Console.WriteLine($"Your amount: {userAmount}");
         }
 
-        public int Amount
+        public int amount
         {
             get
             {
-                return amount;
+                return userAmount;
             }
             set
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("Value lower than 0 is invalid", nameof(amount));
+                    throw new ArgumentException("Value lower than 0 is invalid", nameof(userAmount));
                 }
                 else
                 {
-                    amount = value;
+                    userAmount = value;
                 }
             }
         }
+
+        public int addedIngridientsInt { get; set; }
 
         public void PrintPrice()
         {

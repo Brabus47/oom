@@ -9,46 +9,47 @@ namespace Task4
     class Cheeseburger : Burger
     {
         public double price => 1.3;
-        public int amount => 0;
-        public int addedIngridientsInt => 0;
         public string[] addedIngridientsStr => null;
+        private int userAmount = 0;
 
         public Cheeseburger(int amount)
         {
-            Amount = amount;
+            userAmount = amount;
 
             Console.WriteLine($"Your amount: {amount}");
         }
 
-        public int Amount
+        public int amount
         {
             get
             {
-                return amount;
+                return userAmount;
             }
             set
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("Value lower than 0 is invalid", nameof(amount));
+                    throw new ArgumentException("Value lower than 0 is invalid", nameof(userAmount));
                 }
                 else
                 {
-                    amount = value;
+                    userAmount = value;
                 }
             }
         }
 
+        public int addedIngridientsInt { get; set; }
+
         public void PrintPrice()
         {
-            Console.WriteLine($"Price of cheeseburger: {Price} euros");
+            Console.WriteLine($"Price of cheeseburger: {price} euros");
         }
 
         public void ConfigBurger()
         {
             string userInput;
             int userAmount = amount;
-            double standardPrice = Price;
+            double standardPrice = price;
             int i = 0;
 
             Console.WriteLine("Your cheeseburger contains a patty, cheese, pickels and ketchup.");

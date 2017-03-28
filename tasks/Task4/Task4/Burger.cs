@@ -10,7 +10,7 @@ namespace Task4
     {
         double price { get; }
         int amount { get; set; }
-        int addedIngridientsInt { get; }
+        int addedIngridientsInt { get; set; }
         string[] addedIngridientsStr { get; }
 
         void PrintPrice();

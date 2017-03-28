@@ -42,6 +42,5 @@ namespace Task4
                 Cheeseburger x = new Cheeseburger(-1);
             });
         }
-        
     }
 }
