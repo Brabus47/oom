@@ -17,24 +17,26 @@ namespace Task6
             var random = new Random();
 
             var xs = new[] { 1, 2, 3, 4, 5, 6, 7, 8 };
-            var tasks = new List<Task<int>>();
+            var tasks = new List<Task<Hamburger>>();
 
+            int i = 0;
             foreach (var x in xs)
             {
-                Hamburger task = Task.Run(() =>
+                var task = Task.Run(() =>
                 {
                     WriteLine($"computing result for {x}");
                     Task.Delay(TimeSpan.FromSeconds(5.0 + random.Next(10))).Wait();
                     WriteLine($"done computing result for {x}");
-                    return x * x;
+                    return new Hamburger(i);
                 });
 
+                i++;
                 tasks.Add(task);
             }
 
             WriteLine("doing something else ...");
 
-            var tasks2 = new List<Task<int>>();
+            var tasks2 = new List<Task<Hamburger>>();
             foreach (var task in tasks.ToArray())
             {
                 tasks2.Add(
@@ -73,6 +75,5 @@ namespace Task6
                 if (await IsPrime(i, ct)) WriteLine($"prime number: {i}");
             }
         }
-
     }
 }
